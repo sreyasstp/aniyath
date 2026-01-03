@@ -10,38 +10,38 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 import AboutPage from "./pages/AboutPage";
+import CoursesPage from "./pages/CoursesPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  /* ✅ HASH-BASED SCROLL (GLOBAL FIX) */
+  /* ✅ GLOBAL HASH SCROLL SUPPORT (/#contact) */
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
       const el = document.getElementById(id);
-
       if (el) {
-        // small delay ensures DOM is ready
         setTimeout(() => {
           el.scrollIntoView({ behavior: "smooth" });
-        }, 50);
+        }, 100);
       }
     }
   }, [location]);
 
-  /* ✅ NORMAL SCROLL (HOME PAGE USE) */
+  /* ✅ HOME PAGE SCROLL */
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
       setIsMenuOpen(false);
     }
   };
 
   return (
     <Routes>
-      {/* HOME PAGE */}
+      {/* HOME */}
       <Route
         path="/"
         element={
@@ -51,20 +51,24 @@ function App() {
               setIsMenuOpen={setIsMenuOpen}
               scrollToSection={scrollToSection}
             />
-
             <Hero />
             <Courses />
             <Gallery />
             <Testimonials />
             <Contact />
-
-            <Footer />
+            <Footer scrollToSection={scrollToSection} />
           </div>
         }
       />
 
-      {/* ABOUT PAGE */}
+      {/* ABOUT */}
       <Route path="/about" element={<AboutPage />} />
+
+      {/* COURSES */}
+      <Route path="/courses" element={<CoursesPage />} />
+
+      {/* CONTACT */}
+      <Route path="/contact" element={<ContactPage />} />
     </Routes>
   );
 }
