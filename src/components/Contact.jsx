@@ -70,7 +70,7 @@ export default function Contact() {
             </h3>
 
             <p className="text-gray-600 mb-8 leading-relaxed">
-              Have questions about courses, batches, or admissions?  
+              Have questions about courses, batches, or admissions?
               Send us a WhatsApp message and get quick assistance from our team.
             </p>
 
@@ -88,7 +88,7 @@ export default function Contact() {
                 height="22"
                 fill="currentColor"
               >
-                <path d="M16 2C8.28 2 2 8.02 2 15.44c0 2.62.77 5.05 2.1 7.13L2 30l7.74-2.02A14.3 14.3 0 0 0 16 28c7.72 0 14-6.02 14-13.44C30 8.02 23.72 2 16 2zm0 24c-2.14 0-4.22-.56-6.03-1.63l-.43-.25-4.6 1.2 1.23-4.42-.28-.45A11.6 11.6 0 0 1 4 15.44C4 9.2 9.38 4 16 4s12 5.2 12 11.44C28 20.8 22.62 26 16 26z"/>
+                <path d="M16 2C8.28 2 2 8.02 2 15.44c0 2.62.77 5.05 2.1 7.13L2 30l7.74-2.02A14.3 14.3 0 0 0 16 28c7.72 0 14-6.02 14-13.44C30 8.02 23.72 2 16 2zm0 24c-2.14 0-4.22-.56-6.03-1.63l-.43-.25-4.6 1.2 1.23-4.42-.28-.45A11.6 11.6 0 0 1 4 15.44C4 9.2 9.38 4 16 4s12 5.2 12 11.44C28 20.8 22.62 26 16 26z" />
               </svg>
               Message on WhatsApp
             </a>
@@ -104,26 +104,37 @@ export default function Contact() {
           </div>
 
           {/* MAP */}
-          <div className="rounded-2xl overflow-hidden shadow-xl flex flex-col">
-            <iframe
-              title="Aniyath Educational Institution Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5343687645977!2d76.62453811404752!3d10.7703238622532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8721ba9b4282f%3A0xa79b211c2e455033!2sAniyath+Educational+Institution!5e0!3m2!1sen!2sin!4v1522042587783"
-              className="w-full h-full min-h-[420px] border-0"
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          {/* MAP */}
+          <div className="rounded-2xl overflow-hidden shadow-xl bg-white flex flex-col">
+            {/* Map */}
+            <div className="w-full h-[420px]">
+              <iframe
+                title="Aniyath Educational Institution Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5343687645977!2d76.62453811404752!3d10.7703238622532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8721ba9b4282f%3A0xa79b211c2e455033!2sAniyath+Educational+Institution!5e0!3m2!1sen!2sin!4v1522042587783"
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
 
-            <a
-              href="https://maps.google.com/maps/dir//Aniyath+Educational+Institution"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-primary text-white py-4 font-semibold hover:bg-primaryHover transition"
-            >
-              <Navigation size={18} />
-              Get Directions
-            </a>
+            {/* Divider */}
+            <div className="h-px bg-gray-200" />
+
+            {/* Directions Button */}
+            <div className="p-4">
+              <a
+                href="https://maps.google.com/maps/dir//Aniyath+Educational+Institution"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl font-semibold hover:bg-primaryHover transition"
+              >
+                <Navigation size={18} />
+                Get Directions
+              </a>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
